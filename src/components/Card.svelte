@@ -13,10 +13,17 @@
   export let avatar;
 
   let isModal = false;
+  let like = false;
+  let bookmark = false;
 
   const handleClick = () => {
     isModal = !isModal;
   };
+
+  function handlelike(){
+    like = !like
+  }
+
 </script>
 
 
@@ -157,17 +164,23 @@
             </div>
         </div>
         <div class="Card-photo">
-            <figure>
+            <figure on:dblclick={handlelike}>
                 <img src={photo} alt={username} />
             </figure>
         </div>
         <div class="Card-icons">
             <div class="card-icons-firts">
-                <i class="fas fa-heart" />
+                <i class="fas fa-heart" 
+                class:active-like={like}
+                on:click={handlelike}
+                />
                 <i class="fas fa-paper-plane" on:click={handleClick}/>
             </div>
             <div class="Card-icons-second">
-                <i class ="fas fa-bookmark" />
+                <i class ="fas fa-bookmark" 
+                  class:active-bookmark={bookmark}
+                  on:click={() => (bookmark = !bookmark)}
+                />
             </div>
         </div>
         <div class="Card-description">
