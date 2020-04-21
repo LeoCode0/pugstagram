@@ -1,3 +1,6 @@
+<script>
+  import { likeCount } from '../store/store.js';
+</script>
 
 <style>
   .Header {
@@ -69,7 +72,10 @@
                 <h1>Pugstagram</h1>
                 <div class="Header-nav">
                     <ul>
-                        <li><i class="fas fa-heart" /></li>
+                        <li>
+                          <i class="fas fa-heart" />
+                          {$likeCount === 0 ? '' : $likeCount}
+                        </li>
                         <li>
                             <i class="fas fa-user" />
                         </li>
