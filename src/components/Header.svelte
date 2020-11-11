@@ -1,5 +1,6 @@
 <script>
-  import { likeCount } from '../store/store.js';
+  import { likeCount } from "../store/store.js";
+  export let segment;
 </script>
 
 <style>
@@ -9,9 +10,9 @@
     width: 100%;
   }
 
-    .Header-logo{
-        display: contents;
-    }
+  .Header-logo {
+    display: contents;
+  }
 
   .Header-container {
     grid-template-columns: minmax(auto, 936px);
@@ -63,25 +64,31 @@
     top: 0;
     left: 0;
   }
+
+  [aria-current] i {
+    color: #bc1888;
+  }
 </style>
 
 <div class="Header">
-    <div class="Header-container">
-        <div class="Header-content">
-            <div class="Header-logo">
-                <h1>Pugstagram</h1>
-                <div class="Header-nav">
-                    <ul>
-                        <li>
-                          <i class="fas fa-heart" />
-                          {$likeCount === 0 ? '' : $likeCount}
-                        </li>
-                        <li>
-                            <i class="fas fa-user" />
-                        </li>
-                    </ul>
-                </div>
-            </div>
+  <div class="Header-container">
+    <div class="Header-content">
+      <div class="Header-logo">
+        <h1>Pugstagram</h1>
+        <div class="Header-nav">
+          <ul>
+            <li>
+              <i class="fas fa-heart" />
+              {$likeCount === 0 ? '' : $likeCount}
+            </li>
+            <li>
+              <a aria-current={segment === 'profile' ? 'page' : undefined} href="profile">
+                <i class="fas fa-user" />
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
     </div>
+  </div>
 </div>
