@@ -82,7 +82,9 @@
               {$likeCount === 0 ? '' : $likeCount}
             </li>
             <li>
-              <a aria-current={segment === 'profile' ? 'page' : undefined} href="profile">
+              <a
+                aria-current={segment === 'profile' ? 'page' : undefined}
+                href="profile">
                 <i class="fas fa-user" />
               </a>
             </li>
