@@ -14,8 +14,9 @@ onMount(async () => {
     });
 </script>
 
-<Header />
 <Main>
     <TimeLine posts={data.posts}/>
-    <Sidebar {...data.user}/>
+    {#if data.user}
+        <Sidebar {...data.user}/>
+    {/if}
 </Main>
