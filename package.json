@@ -4,8 +4,10 @@
   "description": "Instagram para pugs",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode-development"
+    "dev": "sapper dev",
+    "build": "sapper build",
+    "export": "sapper export",
+    "start": "node __sapper__/build"
   },
   "keywords": [
     "svelte"
@@ -13,17 +15,14 @@
   "author": "Leonardo Espinoza",
   "license": "ISC",
   "dependencies": {
-    "svelte": "^3.20.1"
+    "compression": "^1.7.4",
+    "polka": "^0.5.2",
+    "sirv": "^1.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/polyfill": "^7.8.7",
-    "@babel/preset-env": "^7.9.5",
-    "babel-loader": "^8.1.0",
-    "html-webpack-plugin": "^4.2.0",
+    "svelte": "^3.20.1",
+    "sapper": "^0.27.16",
     "svelte-loader": "^2.13.6",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack": "^4.42.1"
   }
 }
